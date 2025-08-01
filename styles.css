@@ -1,0 +1,205 @@
+/*
+    » Wagner Lima | www.wagnerlima.net | @wagnerlimaNET «
+    Professor de desenvolvimento web e design na escola iwtraining, especialista em mecanismos de 
+    buscas (SEO) e graduando em Sistemas e Mi­dias Digitais na Universidade Federal do Ceara (UFC).
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    }
+
+  .pagina-inicial {
+    background: #1a25ab;
+    }
+
+    .detalhe-topo {
+      position: absolute;
+      width: 588px;
+      height: 489px;
+      z-index: 1;
+      right: 0;
+      top: 0;
+      background: url('imagens/detalhe-topo.png');
+      }
+
+    .detalhe-base {
+      position: absolute;
+      width: 459px;
+      height: 390px;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      background: url('imagens/detalhe-base.png');
+      }
+
+    .container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      }
+
+      .logotipo {
+        width: 960px;
+        height: 316px;
+        object-fit: contain;
+        margin-bottom: 20px;
+        }
+
+      .btn-jogo {
+        padding: 15px 30px;
+        font-size: 18px;
+        background-color: #e61212;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+
+        .btn-jogo:hover {
+          background-color: #8d0505;
+          }
+
+        @-webkit-keyframes btn-pulsando {
+          to {
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+            }
+          }
+
+          @keyframes btn-pulsando {
+            to {
+              -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+              color:#ea4335; 
+              }
+            }
+
+        .btn-pulsando {
+          display: inline-block;
+          vertical-align: middle;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+          box-shadow: 0 0 1px rgba(3, 4, 58, 0.897);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          -moz-osx-font-smoothing: grayscale;
+          }
+
+          .btn-pulsando:hover, .btn-pulsando:focus, .btn-pulsando:active, .btn-pulsando {
+            -webkit-animation-name: btn-pulsando;
+            animation-name: btn-pulsando;
+            -webkit-animation-duration: 0.7s;
+            animation-duration: 0.7s;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+            }
+
+  .pagina-interna {
+    height: 100vh;
+    display: flex;
+    background: url('imagens/plano-de-fundo.png') #1a25ab left top no-repeat;
+    background-size: cover;
+    }
+
+.blocotimer {
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  font-family: Arial, sans-serif;
+  }
+
+.jogo-da-memoria {
+  width: 900px;   /* 640px */
+  height: 1000px;   /* 740px */
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+  }
+
+.cartao-de-memoria {
+  width: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  }
+
+.cartao-de-memoria:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+  }
+
+.cartao-de-memoria.flip {
+  transform: rotateY(180deg);
+  }
+
+.frente-do-cartao, .interno-do-cartao {
+  width: 100%;
+  position: absolute;
+  border-radius: 5px;
+  background: #fff;
+  backface-visibility: hidden;
+  }
+
+.frente-do-cartao {
+  transform: rotateY(180deg);
+  }
+
+/* Estilo da sobreposição */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.overlay-content {
+  text-align: center;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+#restart-button {
+  background-color: #fff;
+  color: #dbdcee;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 25px;
+  background-color: #2658e1;
+}
+
+#restart-button:hover {
+  background: #080f63;
+}
+
+#game-message {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
